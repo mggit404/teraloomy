@@ -1,0 +1,79 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e2e8f0;
+  --accent: #22c55e;
+  --muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at top, #1e293b 0%, #020617 70%);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.app-shell {
+  width: min(760px, 100%);
+  display: grid;
+  gap: 16px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.dropzone,
+.status-card,
+.hint-card {
+  background: color-mix(in srgb, var(--card) 90%, black 10%);
+  border: 1px solid color-mix(in srgb, var(--muted) 25%, transparent);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.dropzone {
+  text-align: center;
+  transition: border-color 140ms ease, background 140ms ease;
+}
+
+.dropzone.drag-active {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--card) 75%, var(--accent) 25%);
+}
+
+.file-label {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #032b12;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#fileInput {
+  display: none;
+}
+
+.hint-card ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+}

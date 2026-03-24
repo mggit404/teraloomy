@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teraloomy – PDF zu HTML</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <h1>Teraloomy</h1>
+        <p class="subtitle">Browserbasierte Präsentationen aus PDF</p>
+      </header>
+
+      <section id="dropzone" class="dropzone" aria-label="PDF Upload Bereich">
+        <p><strong>PDF per Drag & Drop hier ablegen</strong></p>
+        <p>oder</p>
+        <label class="file-label" for="fileInput">Datei auswählen</label>
+        <input id="fileInput" type="file" accept="application/pdf" />
+      </section>
+
+      <section class="status-card" aria-live="polite">
+        <p id="statusText">Warte auf PDF …</p>
+      </section>
+
+      <details class="hint-card">
+        <summary>Hinweise zur ersten Version</summary>
+        <ul>
+          <li>PDF wird im Browser geparst (pdf.js).</li>
+          <li>Text-Layout wird als positioniertes HTML rekonstruiert.</li>
+          <li>Ergebnis wird in einem neuen Fenster geöffnet.</li>
+        </ul>
+      </details>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
